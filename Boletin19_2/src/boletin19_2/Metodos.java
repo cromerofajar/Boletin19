@@ -1,0 +1,45 @@
+package boletin19_2;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author cromerofajar
+ */
+public class Metodos {
+    public int[] crearArray(int[]lista){
+        for(int i=0;i<lista.length;i++){
+            lista[i]=(int) (Math.random()*10)+1;
+        }
+        return lista;
+    }
+    public void visualizarGrupos(int[] lista){
+        int aprobados=0,suspensos=0;
+        for(int i=0;i<lista.length;i++){
+            if(lista[i]>=5){
+                aprobados++;
+            }
+            else{
+                suspensos++;
+            }
+        }
+        JOptionPane.showMessageDialog(null,"Los aprobados son: "+ aprobados+"\nLos suspensos son: "+ suspensos);
+    }
+    public void calMedia(int[] lista){
+        int media=0;
+        for(int i=0;i<lista.length-1;i++){
+            media=media+lista[i];
+        }
+        media=media/lista.length;
+        JOptionPane.showMessageDialog(null,"La media es: "+media);
+    }
+    public void notaAlta(int[] lista){
+        int notaAlta=0;
+        for (int i=0;i<lista.length-1;i++){
+            if(lista[i]>notaAlta){
+            notaAlta=lista[i];
+            }
+        }
+        JOptionPane.showMessageDialog(null,"La nota mas alta es:"+ notaAlta);
+    }
+}
